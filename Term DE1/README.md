@@ -23,6 +23,8 @@ Relationship(s)
 1. NA_Candidates and political_parties are linked using the party_id
 2. NA_Winners and NA_Candidates are linked using the cand_id
 
+![Schema Diagram](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Schema%20-%20Diagram.png)
+
 ### OPERATIONAL LAYER: 
 ~~~~
 ### CREATION OF SCHEMA TO BEGIN THE OPERATION LAYER ###
