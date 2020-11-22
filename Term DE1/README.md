@@ -176,7 +176,10 @@ END$$
 DELIMITER ;
 
 CALL constituency_consolidated();
+
+SELECT * FROM constituency_2018;
 ~~~~
+
 ![StoredProcedure](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.33.08.png)
 
 ### DATA MARTS --- VIEWS FOR ANALYSIS:
@@ -196,6 +199,7 @@ ORDER BY COUNT(party) DESC;
     
 SELECT * FROM most_seats_won;
 ~~~~
+![NumberOfSeats](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.33.59.png)
 #### VOTING STATISTICS BY CONSTITUENCY:
 ~~~~
 DROP VIEW IF EXISTS voting_data;
@@ -211,6 +215,7 @@ FROM constituency_2018;
     
 SELECT * FROM voting_data;
 ~~~~
+![Voting Data](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.34.40.png)
 #### POPULAR VOTE - MOST POPULAR PARTY BY VOTES:
 ~~~~
 -- ##### PARTY POPULARITY #####
@@ -226,7 +231,7 @@ ORDER BY SUM(total_valid) DESC;
 
 SELECT * FROM party_popularity;
 ~~~~
-
+![Party_Popularity](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.34.57.png)
 ### TRIGGERS:
 Triggers are normally used to track changes in the database. The concept is to not only monitor the changes that have been made but also report the changes in form of a message. Triggers are also used to backup the data if new information is to be inserted. The following trigger is designed for the following:
 	The voting statistics are considered provisional at times when the results are being tallied. This trigger is used to track the data if the information is changed. What it will do is if we change the voting numbers of a particular constituency, the trigger will give an alarm that the data was altered along with the timestamp. Additionally, the trigger will generate a backup file where it will put the previous information and store it for the future. In case of discrepancies with the data such as manipulation for political reasons, these two elements would be a good source of a proactiv measure. 
@@ -279,3 +284,5 @@ UPDATE constituency_2018
 SET total_valid = 157061
 WHERE constituency = 'NA-2';
 ~~~~
+![Trigger1](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.36.06.png)
+![Trigger2](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.36.14.png)
