@@ -176,7 +176,7 @@ END$$
 DELIMITER ;
 
 CALL constituency_consolidated();
-
+![StoredProcedure](https://github.com/adamanees95/SQLDE1/blob/main/Term%20DE1/screenshots/Screenshot%202020-11-22%20at%2020.33.08.png)
 ~~~~
 
 ### DATA MARTS --- VIEWS FOR ANALYSIS:
